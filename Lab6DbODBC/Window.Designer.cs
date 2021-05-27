@@ -34,7 +34,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TableView = new System.Windows.Forms.DataGridView();
+            this.TableGrid = new System.Windows.Forms.DataGridView();
             this.SelectBox = new System.Windows.Forms.TextBox();
             this.ColumnsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.FromIntoLabel = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.StatusBox = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.TableView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TableGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WindowSplit)).BeginInit();
             this.WindowSplit.Panel1.SuspendLayout();
             this.WindowSplit.Panel2.SuspendLayout();
@@ -110,21 +110,21 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "GROUP BY";
             // 
-            // TableView
+            // TableGrid
             // 
-            this.TableView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TableGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TableView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.TableView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.TableView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.TableView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableView.Location = new System.Drawing.Point(3, 3);
-            this.TableView.Name = "TableView";
-            this.TableView.RowHeadersWidth = 51;
-            this.TableView.RowTemplate.Height = 29;
-            this.TableView.Size = new System.Drawing.Size(655, 319);
-            this.TableView.TabIndex = 8;
+            this.TableGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.TableGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.TableGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.TableGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TableGrid.Location = new System.Drawing.Point(3, 3);
+            this.TableGrid.Name = "TableGrid";
+            this.TableGrid.RowHeadersWidth = 51;
+            this.TableGrid.RowTemplate.Height = 29;
+            this.TableGrid.Size = new System.Drawing.Size(655, 319);
+            this.TableGrid.TabIndex = 8;
             // 
             // SelectBox
             // 
@@ -296,7 +296,7 @@
             this.WindowSplit.Panel2.Controls.Add(this.EditButton);
             this.WindowSplit.Panel2.Controls.Add(this.ClearButton);
             this.WindowSplit.Panel2.Controls.Add(this.StatusBox);
-            this.WindowSplit.Panel2.Controls.Add(this.TableView);
+            this.WindowSplit.Panel2.Controls.Add(this.TableGrid);
             this.WindowSplit.Panel2.Controls.Add(this.label6);
             this.WindowSplit.Size = new System.Drawing.Size(996, 466);
             this.WindowSplit.SplitterDistance = 331;
@@ -397,8 +397,8 @@
             this.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ODBC";
-            ((System.ComponentModel.ISupportInitialize)(this.TableView)).EndInit();
+            this.Text = "DbExplorer";
+            ((System.ComponentModel.ISupportInitialize)(this.TableGrid)).EndInit();
             this.WindowSplit.Panel1.ResumeLayout(false);
             this.WindowSplit.Panel1.PerformLayout();
             this.WindowSplit.Panel2.ResumeLayout(false);
@@ -415,7 +415,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView TableView;
+        private System.Windows.Forms.DataGridView TableGrid;
         private System.Windows.Forms.TextBox SelectBox;
         private System.Windows.Forms.Label FromIntoLabel;
         private System.Windows.Forms.TextBox FromBox;

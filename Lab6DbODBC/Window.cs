@@ -41,8 +41,8 @@ namespace DbExplorer
         /// <param name="data">вибірка з select-запиту і звіт</param>
         private string TableFill((DataTable table, string log) data)
         {
-            TableView.DataSource = data.table;
-            TableView.Tag = TableView.Rows.Count; // кількість рядків зараз
+            TableGrid.DataSource = data.table;
+            TableGrid.Tag = TableGrid.Rows.Count; // кількість рядків зараз
             var success = LogIsNumber(data.log) && data.table != null;
             StatusColorChange(success);
             return success ? $"Вибірка оновлена: {data.log} рядків" : data.log;
@@ -100,13 +100,13 @@ namespace DbExplorer
         /// <summary> Безпосереднє рагування таблиць БД у DataGridView </summary>
         private void EditButton_Click(object sender, EventArgs e)
         {
-            (var exp, var log) = (LastTable != "" && TableView.DataSource != null, "");
+            (var exp, var log) = (LastTable != "" && TableGrid.DataSource != null, "");
             if (exp)
             {
-                log = Db.Update(TableView.DataSource as DataTable); // оновлення з виводу
+                log = Db.Update(TableGrid.DataSource as DataTable); // оновлення з виводу
                 StatusBox.Text = LogIsNumber(log) ? $"Використано {log} рядків" : log;
-                _ = int.TryParse(TableView.Tag.ToString(), out int rows);
-                if (TableView.Rows.Count < rows && LastTable != "") // відбулося видалення рядків
+                _ = int.TryParse(TableGrid.Tag.ToString(), out int rows);
+                if (TableGrid.Rows.Count < rows && LastTable != "") // відбулося видалення рядків
                     Db.CheckIdent(LastTable);
             }
             else
@@ -117,7 +117,7 @@ namespace DbExplorer
         /// <summary> Кнопка очищення виводу </summary>
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            (TableView.DataSource, LastTable) = (null, ""); // очищення виводу
+            (TableGrid.DataSource, LastTable) = (null, ""); // очищення виводу
             (StatusBox.ForeColor, StatusBox.Text) = (Color.Green, "Вивід очищено");
         }
 

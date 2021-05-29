@@ -4,7 +4,7 @@
 * **Window.cs** - код форми (Windows Forms)
 * **Window.Designer.cs** - автоматично знерований код форми
 * **Program.cs** - вхідна точка в програму (STAThread)
-* **.csproj (.user)** - налаштування проекту (STAThread)
+* **.csproj (.user)** - налаштування проекту
 * **.sln** - проект Visual Studio
 * **.resx** - файли ресурсів
 

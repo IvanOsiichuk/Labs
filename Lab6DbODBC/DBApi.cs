@@ -85,13 +85,13 @@ namespace DbExplorer
         /// <param name="table">таблиця</param>
         public void CheckIdent(string table)
         {
-            Command.CommandText = "SELECT COUNT(*) FROM " + table;
+            Command.CommandText = "SELECT max(id) FROM " + table;
             Connection.Open();
-            if ((int)Command.ExecuteScalar() < 1) // обнулення identity
-            {
-                Command.CommandText = $"DBCC CHECKIDENT ('{table}', RESEED, -1)";
-                Command.ExecuteNonQuery();
-            }
+            int.TryParse(Command.ExecuteScalar().ToString(), out int maxId);
+
+            Command.CommandText = $"DBCC CHECKIDENT ('{table}', RESEED, {maxId})";
+            Command.ExecuteNonQuery();
+
             Connection.Close();
         }
 
